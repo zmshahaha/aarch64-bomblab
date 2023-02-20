@@ -1,17 +1,14 @@
 # .PHONY: gdb qemu qemu-gdb clean
 ## compile
 
-bomb:
-	./generate_bomb.sh
-
 clean:
 	rm -f bomb
 
 ## execute bomb
-qemu: bomb
+qemu:
 	qemu-aarch64 bomb
 
-qemu-gdb: bomb
+qemu-gdb:
 	qemu-aarch64 -g 1234 bomb
 
 gdb:
